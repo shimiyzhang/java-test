@@ -1,3 +1,7 @@
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.Collections;
+
 public class ArrayTest {
     public static void printArray(int[] array) {
         for (int i = 0; i < array.length; i++) {
@@ -43,5 +47,30 @@ public class ArrayTest {
             if (myList[i] > max) max = myList[i];
         }
         System.out.println("Max is " + max);
+
+        // 多维数组
+        String[][] s = new String[2][];
+        s[0] = new String[2];
+        s[1] = new String[3];
+        s[0][0] = "Good";
+        s[0][1] = "Luck";
+        s[1][0] = "to";
+        s[1][1] = "you";
+        s[1][2] = "!";
+        for (int i = 0; i < s.length; i++) {
+            for (int j = 0; j < s[i].length; j++) {
+                System.out.print(s[i][j] + " ");
+            }
+        }
+
+        // 数组和字符串的转换处理
+        String str = "helloworld";
+        char[] data = str.toCharArray();// 将字符串转为数组
+        for (int x = 0; x < data.length; x++) {
+            System.out.print(data[x] + "  ");
+            data[x] -= 32;
+            System.out.print(data[x] + "  ");
+        }
+        System.out.println(new String(data));
     }
 }
